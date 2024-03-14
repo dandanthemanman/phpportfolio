@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,6 +8,11 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
 })
-export class AppComponent {
-  title = 'php-portfolio';
+export class AppComponent implements OnInit {
+  // I guess this is how you declare a var in TS VV
+  title: string | undefined;
+  ngOnInit() {
+    this.title = 'tester title'
+    console.log(this.title);
+  }
 }
